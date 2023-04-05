@@ -2,6 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
         div.padded {
             padding-top: 0px;
             padding-right: 100px;
@@ -9,9 +13,8 @@
             padding-left: 100px;
         }
     </style>
-    <title>Your Name  |  CS 184</title>
+    <title>CS 184 Final Prject Proposal</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
     <script>
         MathJax = {
@@ -25,10 +28,121 @@
     </script>
 </head>
 <body>
-    <br />
-    <h1 align="middle">Final Project Title</h1>
-    <h2 align="middle">Names</h2>
-    <h2 align="middle">Website URL: <a href="a">a</a></h2>
+    <div style="vertical-align: top; padding: 4px; border: 2px solid black; background-color: #ceebf5;">
+        <em> <strong> <h1 align="middle">Making Minecraft look 🔥🔥</h1></strong></em>
+        <h2 align="middle">a GLSL shader adventure</h2>
+        <div align="middle" style="font-size: 20px;">Created by: Shahar Sandhaus, [everyone, add your name here]</div> <br>
+        <div style="font-size: 16px;" align="middle">Website URL: <a href="https://ziqishi-hmd.github.io/CS184FinalProject/">https://ziqishi-hmd.github.io/CS184FinalProject/</a></div>
 
+        <div style="padding: 6px;"> <div style="vertical-align: top; padding: 4px; background-color: rgb(242, 244, 199); border: 2px solid black;">
+
+            <h3 align="middle">Summary</h3>
+
+            In this project we plan to create a set of shaders for the game Minecraft that will introduce complex rendering techniques and visuals into the game. Shaders of this variety already exist, however, we wish to learn more about OpenGL and GLSL programming by creating our own.
+                
+        </div></div>
+        
+
+        <div style="padding: 6px;"> <div style="vertical-align: top; padding: 4px; background-color: rgb(242, 244, 199); border: 2px solid black;">
+            
+            <h3 align="middle">Problem Description</h3>
+
+            Our project doesn't necesarily aim to solve a "problem" per se, but the basi idea is that we want to improve the visual look of the game Minecraft. The default rendering for the game is quite boring (at least in our opinion), and adding effects such as shadow mapping or normal mapping on water would really add to the experience of playing the game.
+
+        </div></div>
+
+        <div style="padding: 6px;"> <div style="vertical-align: top; padding: 4px; background-color: rgb(242, 244, 199); border: 2px solid black;">
+
+            <h3 align="middle">Goals and Deliverables</h3>
+
+            <p>Since we are making a shader pack for the game, we plan on having a "demo" where we make the shaders availaibe (on a public github repo prehaps) and allow other students to download them and run them locally on their machine. This will serve as an interactive demo allowing anyone who wants to try out our shaders on their own computer at home. However, we recognize that not everyone owns a copy of Minecraft or wants to spend time installing shaders, so we will also be taking screenshots of thew game running on our own comptuers with the shaders off and on, showing them side by side. </p>
+
+            <p>Since our project consists of altering the rendering code of a game, there is no way to objevtively measure how "good" our shaders are, since that's a matter of personal opinion. However, we plan on attempting to measure the quality of our implementation by comparing the look of our shader to the reference implementations that we will be using. For example, when we impelement our "improved water" with normal mapping and wave simulations, we will reference the ThinMatrix Youtube tutorial on the topic to make sure our implemention kinda looks like his. Of course, since we are simulating real world phenomena, we can also just use our eyes to see if our new water looks any more realistic or not.</p>
+
+            
+            <strong><em><u>Plan to Deliver:</u></em></strong>
+
+            <ol>
+                <li> <u>Impelement a simple cell shader for minecraft: </u>   This theoretically should be a very very simple shaderpack and will serve as a good "practice run" for the rest of the project.</li>
+                <li><u>Add a "wind" effect to tree leaves to make them sway in the wind:</u> This should be another simple shader, but this time it fits with the theme of the other effects, so it will be included in the final shaderpack. </li>
+                <li><u>Add a dynamic shadow system and cast a shadow from the position of the sun: </u> essentially, we want to add shadows using shadow mapping and cast a shadow on the terrain based on the direction of the sun. Adding shadows from light sources other than the sun should be much harder, from our understading.</li>
+
+                <li><u>Significantly improve the look of water in the game:</u> By default, minecraft's water looks like a bland-blue-nothingness. We can do better. We want to add a more realistic water rendering system that includes effects like tiny ripples in the water (using normal mapping), waves (in the vertex shader), implement a very basic version of the Fresnel effect to make the transparency of the water dependant on the angle at which one is looking. </li>
+            </ol>
+
+            <strong><em><u>Hope to Deliver:</u></em></strong>
+
+            <ol>
+                <li> <u>Water reflections and refractions: </u> To really polish our water implementation, we would like to also add water reflections and refraction. We figure using some of the techniques we learned during shadow mapping should help us, but we are far less confident about this task, so we are putting it in the "hope" section.</li>
+                <li> <u>Add bloom to light sources: </u> We have no idea how we would do this yet, but we think it would be really cool to add a bloom effect into the game. From our understading, this is just a post processing effect, but we are very unsure how we would integrate it into the game yet.</li>
+                <li> <u>Motion Blur: </u> We also think it would be cool to add motion blur. We don't know anything about it's implementation, so we have no idea how hard this will actually be. I guess we'll find out... </li>
+            </ol>
+            
+
+        </div></div>
+
+        <div style="padding: 6px;"> <div style="vertical-align: top; padding: 4px; background-color: rgb(242, 244, 199); border: 2px solid black;">
+            <h3 align="middle">Schedule</h3>
+
+            <strong><em><u>Week 1:</u></em></strong>
+
+            <ol>
+                <li> Get a very very basic custom shader running. Like a shader that makes all the blocks in the game all one color. The first step is just getting our code to run <em> at all</em>.</li>
+
+                <li>Implement cell shading. This shouldn't be <em>too</em> hard. Hopefully...</li>
+
+                <li><em>mayyybee</em>, implement the wind effect too. depending on how long the first two steps take.</li>
+            </ol>
+
+            <strong><em><u>Week 2:</u></em></strong>
+
+            <ol>
+                <li>Add the wind effect if we didn't do it before</li>
+                <li>Start working on the shadow mapping</li>
+                <li>Start working on water effects (we can do these both in parallel and starting them early is probably smart)</li>
+            </ol>
+
+            <strong><em><u>Week 3:</u></em></strong>
+
+            <ol>
+                <li>Continue working on shadows and fancy water, and reasses based on what we've learned so far (maybe one of these is MUCH harder than expected and we need to shift our focus a bit)</li>
+                <li>If we finished all these shader tasks much faster than expected, then we'll try out some of the "hope" features we wanted to try out.</li>
+                <li>Work on all the milestone stuff we need to do (video, presentation, etc...)</li>
+                <li>Startin planning for final presentation</li>              
+            </ol>
+
+            <strong><em><u>Week 4:</u></em></strong>
+
+            <ol>
+                <li>Finalize the shader code</li>
+                <li>pack the shader code and publish it to a repo for others to download (with installation instructions of course)</li>
+                <li>Work on the final video (will probably include game footage of our shaders in action).</li> 
+                <li>Work on final report</li>      
+            </ol>
+
+        </div></div>
+
+        <div style="padding: 6px;"> <div style="vertical-align: top; padding: 4px; background-color: rgb(242, 244, 199); border: 2px solid black;">
+
+            <h3 align="middle">Resources</h3>
+
+            We will be developing our shaders for the rendering engine of the Optifine mod for Minecraft (this mod is what nearly all popular minecraft shaders use). We will also be referencing these resources for the project:
+
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=HusvGeEDU_U&list=PLRIWtICgwaX23jiqVByUs0bqhnalNTNZh">A tutorial for implementing nice looking water in OpenGL</a></li>
+
+                <li><a href="https://www.youtube.com/watch?v=dzItGHyteng">A tutorial for implementing Cell shading in OpenGL</a></li>
+
+                <li><a href="https://saada2006.github.io/minecraft-shader-tutorials/">A series of tutorials on the basics of custom Minecraft shaders</a></li>
+
+                <li><a href="https://www.curseforge.com/minecraft/texture-packs/spidews-bloom-shaders">An existing Minecraft shader pack implementing bloom</a> (if we get to bloom, this could be a good reference)</li>
+
+                <li><a href="https://wiki.shaderlabs.org/wiki/Getting_Started">Another set of tutorials for writting shaders for Minecraft</a></li>
+
+            </ul>
+            
+
+        </div></div>
+    </div>
 </body>
 </html>
